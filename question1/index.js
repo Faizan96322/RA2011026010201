@@ -1,5 +1,6 @@
 import express from "express";
 import cors from 'cors'
+import "dotenv/config"
 import { getTrainDetails } from "./utils.js";
 
 (async ()=>{
@@ -14,7 +15,7 @@ app.get('/trains',async (req,res)=>{
     res.send(data)
 })
 
-const port = 3003;
+const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`)
 })
